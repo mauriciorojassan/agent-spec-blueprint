@@ -1,5 +1,6 @@
 # Agent Spec Blueprint
 
+[![CI](https://github.com/nocti/agent-spec-blueprint/actions/workflows/ci.yml/badge.svg)](https://github.com/nocti/agent-spec-blueprint/actions/workflows/ci.yml)
 Generates **structured blueprints for AI agents** from natural language descriptions.
 
 The goal of this tool is to facilitate the initial design of agent-based architectures. It transforms abstract ideas and requirements into a **formal, verifiable technical specification** (inputs, outputs, tools, constraints, and test cases), maintaining neutrality across specific providers or platforms.
@@ -27,6 +28,12 @@ The goal of this tool is to facilitate the initial design of agent-based archite
 - **CLI**: Node.js + TypeScript (executed via `tsx`).
 - **Containerization**: Docker (multi-stage build).
 - **LLM Provisioning**: Configurable abstraction via environment variables.
+
+---
+
+## UI Preview
+
+![Agent Spec Blueprint UI](./docs/screenshot.png)
 
 ---
 
@@ -161,6 +168,8 @@ Based on the initial instruction, the system composes a JSON object following th
 
 ## 🏗️ High-Level Architecture
 
+For more details about design decisions and long-term goals, see [agents.md](./agents.md).
+
 - **`src/app`**: Web routing structure and API (Next.js App Router).
 - **`src/types`**: Interfaces and data contracts ensuring strict typing.
 - **`src/lib/llm`**: Strategy pattern implementation for LLM clients (OpenAI, among others).
@@ -170,6 +179,8 @@ Based on the initial instruction, the system composes a JSON object following th
 ---
 
 ## 🤝 Contributing
+
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to get started.
 
 To maintain and extend this project under OSS guidelines:
 
