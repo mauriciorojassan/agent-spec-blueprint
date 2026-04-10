@@ -66,13 +66,13 @@ export const AgentOutputSchema = z.object({
 export const AgentToolSchemaZ = z.object({
   name: z.string(),
   description: z.string(),
-  input_schema: z.record(z.unknown()),
-  output_schema: z.record(z.unknown()),
+  input_schema: z.record(z.string(), z.unknown()),
+  output_schema: z.record(z.string(), z.unknown()),
 });
 
 export const AgentTestCaseSchema = z.object({
   name: z.string(),
-  input: z.record(z.unknown()),
+  input: z.record(z.string(), z.unknown()),
   expected_behavior: z.string(),
 });
 
