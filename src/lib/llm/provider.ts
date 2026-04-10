@@ -1,4 +1,6 @@
 // src/lib/llm/provider.ts
+import { OpenAIClient } from './openaiClient';
+import { OllamaClient } from './ollamaClient';
 
 export interface LLMGenerateOptions {
   temperature?: number;
@@ -13,12 +15,10 @@ export function getLLMClient(): LLMClient {
   const provider = process.env.AI_PROVIDER ?? 'openai';
 
   if (provider === 'openai') {
-    const { OpenAIClient } = require('./openaiClient') as typeof import('./openaiClient');
     return new OpenAIClient();
   }
 
   if (provider === 'ollama') {
-    const { OllamaClient } = require('./ollamaClient') as typeof import('./ollamaClient');
     return new OllamaClient();
   }
 

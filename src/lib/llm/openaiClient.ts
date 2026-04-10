@@ -55,7 +55,7 @@ export class OpenAIClient implements LLMClient {
         throw new Error(`LLM request failed: ${res.status} ${text}`);
       }
 
-      const data = (await res.json()) as any;
+      const data = (await res.json()) as { choices?: Array<{ message?: { content?: unknown } }> };
       const content = data.choices?.[0]?.message?.content;
       const outputLength = typeof content === 'string' ? content.length : 0;
 

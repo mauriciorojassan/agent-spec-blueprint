@@ -51,7 +51,7 @@ export class OllamaClient implements LLMClient {
         throw new Error(`Ollama request failed: ${res.status} ${text}`);
       }
 
-      const data = (await res.json()) as any;
+      const data = (await res.json()) as { message?: { content?: unknown } };
       const content = data?.message?.content;
       const outputLength = typeof content === 'string' ? content.length : 0;
 
